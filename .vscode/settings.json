@@ -3,5 +3,6 @@
         "activityBar.background": "#143320",
         "titleBar.activeBackground": "#1C482D",
         "titleBar.activeForeground": "#F7FCF9"
-    }
+    },
+    "material-icon-theme.activeIconPack": "nest"
 }

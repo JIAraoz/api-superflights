@@ -3,12 +3,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [ConfigModule.forRoot({
     envFilePath:[`.env.development`],
     isGlobal:true
-  }),MongooseModule.forRoot(process.env.URL_MONGODB)],
+  }),MongooseModule.forRoot(process.env.URL_MONGODB), UserModule],
   controllers: [AppController],
   providers: [AppService],
 })
