@@ -30,4 +30,8 @@ export class UserService {
    async getAllUsers():Promise<IUser[]>{
     return await this.model.find()
    }
+
+   async getById(id:string):Promise<IUser>{
+    return await this.model.findById(id)
+   }
 }
