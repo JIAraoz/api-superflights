@@ -34,4 +34,11 @@ export class UserService {
    async getById(id:string):Promise<IUser>{
     return await this.model.findById(id)
    }
+
+   async updateUser(id:string, user:UserDTO):Promise<IUser>{
+    const hash = await this.hashPassword(user.password)
+    const newUser={...user,password:hash}
+
+    return this.model.findByIdAndUpdate(id,newUser,{new:true})
+   }
 }
