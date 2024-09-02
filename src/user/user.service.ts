@@ -26,4 +26,8 @@ export class UserService {
         
     }
     }
+
+   async getAllUsers():Promise<IUser[]>{
+    return await this.model.find()
+   }
 }
